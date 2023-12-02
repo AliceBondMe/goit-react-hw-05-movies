@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
         font-size: 18px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        background-color: #000000;
-        color: #ffffff;
+        background-color: #e4f8f1d3;
+       color: #113835;
     }
 
     code {
@@ -26,6 +26,11 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         list-style: none;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
     }
 
     img {
