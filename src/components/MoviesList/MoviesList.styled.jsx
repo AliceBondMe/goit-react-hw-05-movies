@@ -22,9 +22,19 @@ export const CardLink = styled(Link)`
   }
 `;
 
+export const ImgWrap = styled.div`
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 200px;
+  height: 268px;
+  display: flex;
+  align-content: center;
+`;
+
 export const Image = styled.img`
   border-radius: 8px;
-  margin: 0 auto;
+  width: 100%;
+  object-fit: cover;
 `;
 
 export const Title = styled.h3`

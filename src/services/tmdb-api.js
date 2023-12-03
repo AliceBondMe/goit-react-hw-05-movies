@@ -1,21 +1,26 @@
 import axios from 'axios';
 
-export async function searchTrendingMovies() {
-  const BASE_URL = 'https://api.themoviedb.org/3/trending/movie/day';
+const api_key = '81bc6a75d9ad77927c9b3f7e8ad30411';
+const BASE_URL = 'https://api.themoviedb.org/3';
+
+export async function fetchMoviesData(type, id, query) {
+  const endpointByType = {
+    trending: '/trending/movie/day',
+    movieById: `/movie/${id}`,
+    searchByQuery: '/search/movie',
+    cast: `/movie/${id}/credits`,
+    reviews: `/movie/${id}/reviews`,
+  };
+
   const searchParams = new URLSearchParams({
-    api_key: '81bc6a75d9ad77927c9b3f7e8ad30411',
+    query: query,
+    include_adult: true,
   });
 
-  const response = await axios.get(`${BASE_URL}?${searchParams}`);
-  return response.data;
-}
-
-export async function searchMovieById(id) {
-  const BASE_URL = 'https://api.themoviedb.org/3/movie/';
-  const searchParams = new URLSearchParams({
-    api_key: '81bc6a75d9ad77927c9b3f7e8ad30411',
-  });
-
-  const response = await axios.get(`${BASE_URL}/${id}?${searchParams}`);
+  const response = await axios.get(
+    `${BASE_URL}${endpointByType[type]}?api_key=${api_key}&${
+      type === 'searchByQuery' ? searchParams : ''
+    }`
+  );
   return response.data;
 }

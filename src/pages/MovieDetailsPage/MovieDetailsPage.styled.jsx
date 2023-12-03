@@ -1,24 +1,23 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const AdditionalNav = styled.div`
   display: flex;
   gap: 40px;
-  margin-bottom: 16px;
+  align-items: center;
+  margin-bottom: 24px;
 `;
 
-export const Title = styled.h1`
-  margin-bottom: 16px;
-`;
-
-export const Information = styled.div`
+export const NavList = styled.ul`
   display: flex;
-  flex-direction: column;
   gap: 20px;
-  width: 600px;
-  font-size: 20px;
-  line-height: 28px;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
 `;
 
-export const LineHeader = styled.span`
-  font-weight: bold;
+export const NavLinkStyled = styled(NavLink)`
+  &.active {
+    text-decoration: underline;
+  }
 `;
