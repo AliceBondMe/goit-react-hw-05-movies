@@ -1,11 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
-import {
-  Link,
-  Outlet,
-  useLocation,
-  useNavigate,
-  useParams,
-} from 'react-router-dom';
+import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import { fetchMoviesData } from 'services/tmdb-api';
 import { Loader } from 'components/Loader/Loader';
@@ -13,6 +7,7 @@ import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { Error } from 'pages/HomePage/HomePage.styled';
 import {
   AdditionalNav,
+  BackLink,
   NavLinkStyled,
   NavList,
 } from './MovieDetailsPage.styled';
@@ -42,7 +37,7 @@ const MovieDetailsPage = () => {
 
   return (
     <>
-      <Link to={state?.from ?? '/'}>Go back</Link>
+      <BackLink to={state?.from ?? '/'}>Go back</BackLink>
 
       {error === '' && movieData ? (
         <>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BsSearch } from 'react-icons/bs';
 
 export const SearchForm = styled(Form)`
+  margin: 0 auto 24px auto;
   display: flex;
   align-items: center;
   width: 100%;

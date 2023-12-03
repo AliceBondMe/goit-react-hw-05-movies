@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const AdditionalNav = styled.div`
@@ -11,8 +11,8 @@ export const AdditionalNav = styled.div`
 export const NavList = styled.ul`
   display: flex;
   gap: 20px;
-  align-items: center;
-  font-size: 28px;
+  align-items: bottom;
+  font-size: 24px;
   font-weight: bold;
 `;
 
@@ -20,4 +20,11 @@ export const NavLinkStyled = styled(NavLink)`
   &.active {
     text-decoration: underline;
   }
+`;
+
+export const BackLink = styled(Link)`
+  display: inline-block;
+  text-decoration: underline;
+  font-size: 20px;
+  margin-bottom: 16px;
 `;
